@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Environment variables
+.env
+
+# Tailwind CSS
+frontend/dist/
+
+# OS generated files
+.DS_Store
+Thumbs.db
