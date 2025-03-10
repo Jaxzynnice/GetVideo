@@ -3,18 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Downloader</title>
-    <link href="./style.css" rel="stylesheet">
+    <title>GetVideo - Free Video & Audio Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-2xl">
-        <h1 class="text-3xl font-bold text-center mb-6">Video Downloader</h1>
-        <form id="downloadForm" class="mb-6">
-            <input type="text" id="videoUrl" placeholder="Enter video URL" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <button type="submit" class="w-full mt-4 bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600">Download</button>
-        </form>
-        <div id="result" class="space-y-4"></div>
-    </div>
-    <script src="./script.js"></script>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GetVideo</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <div class="settings">
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+                <select id="languageSelect">
+                    <option value="en">English</option>
+                    <option value="id">Indonesia</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Convert Videos to MP3 and MP4 Easily</h1>
+        <p>Download videos and audios from social media platforms for free.</p>
+        <div class="download-box">
+            <input type="text" id="videoUrl" placeholder="Paste video link here...">
+            <button id="downloadBtn"><i class="fas fa-download"></i> Download</button>
+        </div>
+    </section>
+
+    <section id="your-information" class="your-information">
+        <h2>Your Information</h2>
+        <table>
+            <tr>
+                <th>Lifetime</th>
+                <th>IP Address</th>
+                <th>Battery</th>
+            </tr>
+            <tr>
+                <td id="lifetime">00:00:00</td>
+                <td id="ipAddress">Loading...</td>
+                <td id="batteryStatus">Not Supported</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="why-choose-getvideo" class="why-choose-getvideo">
+        <h2>Why Choose GetVideo?</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <i class="fas fa-tachometer-alt"></i>
+                <h3>Fast Download</h3>
+                <p>Download videos at maximum speed with our optimized servers.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure & Safe</h3>
+                <p>100% safe downloads without any harmful viruses or ads.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-infinity"></i>
+                <h3>Unlimited Downloads</h3>
+                <p>No limits on the number of videos you can download.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="server-status" class="server-status">
+        <h2>Server Status</h2>
+        <div class="status-cards">
+            <div class="status-card">
+                <h3>Uptime</h3>
+                <p id="uptime">Loading...</p>
+            </div>
+            <div class="status-card">
+                <h3>Total Requests</h3>
+                <p id="totalRequests">Loading...</p>
+            </div>
+            <div class="status-card">
+                <h3>Memory Usage</h3>
+                <p id="memoryUsage">Loading...</p>
+            </div>
+            <div class="status-card">
+                <h3>Disk Usage</h3>
+                <p id="diskUsage">Loading...</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Is it legal to download videos from social media platforms? <i class="fas fa-chevron-down"></i></h3>
+                <p>Yes, as long as you have the right to download the content.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What media formats are supported? <i class="fas fa-chevron-down"></i></h3>
+                <p>We support MP3 and MP4 formats.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a limit to how many videos I can download? <i class="fas fa-chevron-down"></i></h3>
+                <p>No, you can download unlimited videos for free.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I download private or restricted videos? <i class="fas fa-chevron-down"></i></h3>
+                <p>No, private or restricted videos cannot be downloaded.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this service free to use? <i class="fas fa-chevron-down"></i></h3>
+                <p>Yes, our service is completely free.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="connect">
+                <h3>Connect</h3>
+                <p>Download your favorite videos & audios from social media with ease.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 GetVideo. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
