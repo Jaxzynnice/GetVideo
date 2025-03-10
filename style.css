@@ -13,6 +13,10 @@ body.dark-mode {
     color: #ffffff;
 }
 
+body.dark-mode .info-card, body.dark-mode .feature-card, body.dark-mode .status-card, body.dark-mode .faq-item {
+    background-color: #1e1e1e;
+}
+
 header {
     background-color: #007bff;
     color: #fff;
@@ -206,6 +210,10 @@ footer .quick-links ul {
 footer .quick-links a {
     color: #fff;
     text-decoration: none;
+}
+
+footer .about {
+    max-width: 300px;
 }
 
 footer .footer-bottom {
