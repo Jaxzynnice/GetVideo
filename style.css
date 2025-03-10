@@ -132,7 +132,7 @@ header .divider {
 }
 
 .how-it-works .step {
-    flex: 1 1 300px;
+    flex: 1 1 200px;
     text-align: center;
 }
 
@@ -216,10 +216,42 @@ footer .about {
     max-width: 300px;
 }
 
+footer .social-media {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer .social-media a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
 footer .footer-bottom {
     margin-top: 1rem;
     border-top: 1px solid #ccc;
     padding-top: 1rem;
+}
+
+#toTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+}
+
+#toTopBtn:hover {
+    background-color: #0056b3;
 }
 
 /* Responsive Styles */
