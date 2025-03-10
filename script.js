@@ -16,35 +16,24 @@ languageSelect.addEventListener('change', () => {
     }
 });
 
-// Update Lifetime
-const lifetimeElement = document.getElementById('lifetime');
-function updateLifetime() {
+// Update Time
+const timeElement = document.getElementById('time');
+function updateTime() {
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
     const seconds = String(now.getSeconds()).padStart(2, '0');
-    lifetimeElement.textContent = `${hours}:${minutes}:${seconds}`;
+    timeElement.textContent = `${hours}:${minutes}:${seconds}`;
 }
-setInterval(updateLifetime, 1000);
+setInterval(updateTime, 1000);
 
-// Get IP Address
-fetch('https://api.ipify.org?format=json')
+// Get IP Address and Country
+fetch('https://ipinfo.io/json')
     .then(response => response.json())
     .then(data => {
         document.getElementById('ipAddress').textContent = data.ip;
+        document.getElementById('country').textContent = data.country;
     });
-
-// Battery Status
-if ('getBattery' in navigator) {
-    navigator.getBattery().then(battery => {
-        const batteryStatus = document.getElementById('batteryStatus');
-        batteryStatus.textContent = `${Math.floor(battery.level * 100)}%`;
-
-        battery.addEventListener('levelchange', () => {
-            batteryStatus.textContent = `${Math.floor(battery.level * 100)}%`;
-        });
-    });
-}
 
 // FAQ Dropdown
 const faqItems = document.querySelectorAll('.faq-item');
@@ -55,7 +44,7 @@ faqItems.forEach(item => {
 });
 
 // Fetch Server Status
-fetch('https://velyn.vercel.app/api/status')
+fetch('/api/status')
     .then(response => response.json())
     .then(data => {
         document.getElementById('uptime').textContent = data.uptime;
@@ -81,3 +70,32 @@ const navLinks = document.querySelector('.nav-links');
 navbarToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
+
+// Scroll to Top Button
+const toTopBtn = document.getElementById('toTopBtn');
+window.addEventListener('scroll', () => {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        toTopBtn.style.display = 'block';
+    } else {
+        toTopBtn.style.display = 'none';
+    }
+});
+
+toTopBtn.addEventListener('click', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});
+
+// Animate on Scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach(el => observer.observe(el));
