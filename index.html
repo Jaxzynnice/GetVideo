@@ -31,11 +31,11 @@
     </header>
 
     <section id="home" class="hero">
-        <h1>Convert YouTube Videos to MP3 and MP4 Easily</h1>
-        <p>Convert and download YouTube videos in MP3 format for free.</p>
+        <h1>Download any Video from Your Favorite Platform with GetVideo</h1>
+        <p>Convert and download videos in MP3 or MP4 format for free.</p>
         <div class="download-box">
             <button id="pasteBtn"><i class="fas fa-paste"></i> Paste</button>
-            <input type="text" id="videoUrl" placeholder="Paste YouTube video link here...">
+            <input type="text" id="videoUrl" placeholder="Paste video link here...">
             <button id="downloadBtn"><i class="fas fa-download"></i> Download</button>
         </div>
     </section>
@@ -45,8 +45,8 @@
         <div class="info-cards">
             <div class="info-card">
                 <i class="fas fa-clock"></i>
-                <h3>Lifetime</h3>
-                <p id="lifetime">00:00:00</p>
+                <h3>Time</h3>
+                <p id="time">00:00:00</p>
             </div>
             <div class="info-card">
                 <i class="fas fa-globe"></i>
@@ -54,9 +54,9 @@
                 <p id="ipAddress">Loading...</p>
             </div>
             <div class="info-card">
-                <i class="fas fa-battery-half"></i>
-                <h3>Battery</h3>
-                <p id="batteryStatus">Not Supported</p>
+                <i class="fas fa-flag"></i>
+                <h3>Country</h3>
+                <p id="country">Loading...</p>
             </div>
         </div>
     </section>
@@ -67,17 +67,18 @@
             <div class="step">
                 <div class="step-icon"><i class="fas fa-copy"></i></div>
                 <h3>Copy the Link</h3>
-                <p>Copy the video URL from your favorite platform</p>
             </div>
             <div class="step">
                 <div class="step-icon"><i class="fas fa-paste"></i></div>
-                <h3>Paste and Download</h3>
-                <p>Paste the link, select the format and quality, and start downloading</p>
+                <h3>Paste on GetVideo</h3>
             </div>
             <div class="step">
                 <div class="step-icon"><i class="fas fa-download"></i></div>
-                <h3>Enjoy Your Video</h3>
-                <p>Your video is ready to watch offline</p>
+                <h3>Download Video</h3>
+            </div>
+            <div class="step">
+                <div class="step-icon"><i class="fas fa-save"></i></div>
+                <h3>Saved on Drive</h3>
             </div>
         </div>
     </section>
@@ -99,6 +100,16 @@
                 <i class="fas fa-infinity"></i>
                 <h3>Unlimited Downloads</h3>
                 <p>No limits on the number of videos you can download</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>Completely Free</h3>
+                <p>Our service is completely free to use</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-check-circle"></i>
+                <h3>10+ Supported Sites</h3>
+                <p>Download videos from more than 10 supported platforms</p>
             </div>
         </div>
     </section>
@@ -172,6 +183,10 @@
 
     <footer>
         <div class="footer-content">
+            <div class="about">
+                <h3>About</h3>
+                <p>GetVideo is a free video and audio downloader for all social media platforms. Download your favorite videos and audios with ease.</p>
+            </div>
             <div class="quick-links">
                 <h3>Quick Links</h3>
                 <ul>
@@ -182,15 +197,18 @@
                     <li><a href="#about">About</a></li>
                 </ul>
             </div>
-            <div class="about">
-                <h3>About</h3>
-                <p>GetVideo is a free video and audio downloader for all social media platforms. Download your favorite videos and audios with ease.</p>
-            </div>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="far fa-envelope"></i></a>
         </div>
         <div class="footer-bottom">
             <p>© 2025 GetVideo. All rights reserved.</p>
         </div>
     </footer>
+
+    <button id="toTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
