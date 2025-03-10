@@ -63,3 +63,13 @@ fetch('https://velyn.vercel.app/api/status')
         document.getElementById('memoryUsage').textContent = data.memoryUsage;
         document.getElementById('diskUsage').textContent = data.diskUsage;
     });
+
+// Paste URL
+document.getElementById('pasteBtn').addEventListener('click', async () => {
+    try {
+        const text = await navigator.clipboard.readText();
+        document.getElementById('videoUrl').value = text;
+    } catch (err) {
+        alert('Failed to paste URL');
+    }
+});
