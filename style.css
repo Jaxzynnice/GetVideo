@@ -1,3 +1,187 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header .nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .settings {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+header .settings button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+header .settings select {
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.download-box {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.download-box input {
+    padding: 0.5rem;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.download-box button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.your-information, .why-choose-getvideo, .server-status, .faq {
+    padding: 2rem;
+    text-align: center;
+}
+
+.your-information table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.your-information table th, .your-information table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.why-choose-getvideo .feature-cards, .server-status .status-cards, .faq .faq-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.why-choose-getvideo .card, .server-status .status-card, .faq .faq-item {
+    flex: 1 1 300px;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.faq .faq-item p {
+    display: none;
+    margin-top: 1rem;
+}
+
+.faq .faq-item.active p {
+    display: block;
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+footer .quick-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .quick-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .footer-bottom {
+    margin-top: 1rem;
+    border-top: 1px solid #ccc;
+    padding-top: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-box input {
+        width: 100%;
+    }
+
+    .why-choose-getvideo .feature-cards, .server-status .status-cards, .faq .faq-list {
+        flex-direction: column;
+    }
+}
