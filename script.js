@@ -32,7 +32,7 @@ fetch('https://ipinfo.io/json')
     .then(response => response.json())
     .then(data => {
         document.getElementById('ipAddress').textContent = data.ip;
-        document.getElementById('country').textContent = data.country;
+        document.getElementById('country').textContent = data.region;
     });
 
 // FAQ Dropdown
