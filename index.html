@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VideooSaver - Free Video & Audio Downloader</title>
+    <title>VideooSaver - Best Free Video Downloader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://files.catbox.moe/uj3kpt.jpeg" type="image/jpeg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,11 +15,11 @@
     <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="https://files.catbox.moe/m2hwp6.png" alt="VideooSaver" width="100px">
-                <span class="logo-text">VideooSaver</span>
+                <img src="https://files.catbox.moe/uj3kpt.jpeg" alt="VideooSaver" width="80px">
+                <span class="logo-text">Videoo<span class="icon-unlimited">∞</span>Saver</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars" style="font-size: 26px;"></i>
+                <i class="fas fa-bars" style="font-size: 26px; color: #007bff;"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="mr-auto"></div>
@@ -30,7 +31,7 @@
                         <a class="nav-link" href="#how-it-works"><i class="fas fa-cogs"></i> How It Works</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#why-choose-getvideo"><i class="fas fa-star"></i> Why Choose VideooSaver</a>
+                        <a class="nav-link" href="#why-choose-getvideo"><i class="fas fa-star"></i> Why Choose Videoo<span class="icon-unlimited">∞</span>Saver</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
@@ -39,6 +40,13 @@
                         <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
                     </li>
                 </ul>
+                <div class="settings">
+                    <button id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="id">Indonesia</option>
+                    </select>
+                </div>
             </div>
         </div>
     </nav>
@@ -46,13 +54,15 @@
     <!-- Main Content -->
     <div class="main-content">
         <section id="home" class="hero">
-            <h1>Download any Video from Your Favorite Platform with VideooSaver</h1>
+            <h1>Download any Video from Your Favorite Platform with Videoo<span class="icon-unlimited">∞</span>Saver</h1>
             <p>Convert and download videos in MP3 or MP4 format for free.</p>
-            <div class="download-box">
-                <button id="pasteBtn"><i class="fas fa-paste"></i> Paste</button>
-                <input type="text" id="videoUrl" placeholder="Paste video link here...">
-                <button id="downloadBtn"><i class="fas fa-download"></i> Download</button>
-            </div>
+            <form id="downloadForm">
+                <div class="download-box">
+                    <button id="pasteBtn" type="button"><i class="fas fa-paste"></i> Paste</button>
+                    <input type="text" id="videoUrl" name="videoUrl" placeholder="Paste video link here...">
+                    <button id="downloadBtn" type="submit"><i class="fas fa-download"></i> Download</button>
+                </div>
+            </form>
         </section>
 
         <section id="your-information" class="your-information">
@@ -86,7 +96,7 @@
                 </div>
                 <div class="step">
                     <div class="step-icon"><i class="fas fa-paste"></i></div>
-                    <h3>Paste on VideooSaver</h3>
+                    <h3>Paste on Videoo<span class="icon-unlimited">∞</span>Saver</h3>
                     <p>Paste the link, select the format and quality, and start downloading</p>
                 </div>
                 <div class="step">
@@ -103,7 +113,7 @@
         </section>
 
         <section id="why-choose-getvideo" class="why-choose-getvideo">
-            <h2>Why Choose VideooSaver?</h2>
+            <h2>Why Choose Videoo<span class="icon-unlimited">∞</span>Saver?</h2>
             <div class="feature-cards">
                 <div class="feature-card">
                     <i class="fas fa-tachometer-alt"></i>
@@ -167,35 +177,45 @@
                         <h3>Is it legal to download videos from social media platforms?</h3>
                         <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
                     </div>
-                    <p>Yes, as long as you have the right to download the content.</p>
+                    <div class="faq-answer">
+                        <p>Yes, as long as you have the right to download the content.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>What media formats are supported?</h3>
                         <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
                     </div>
-                    <p>We support MP3 and MP4 formats.</p>
+                    <div class="faq-answer">
+                        <p>We support MP3 and MP4 formats.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Is there a limit to how many videos I can download?</h3>
                         <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
                     </div>
-                    <p>No, you can download unlimited videos for free.</p>
+                    <div class="faq-answer">
+                        <p>No, you can download unlimited videos for free.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Can I download private or restricted videos?</h3>
                         <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
                     </div>
-                    <p>No, private or restricted videos cannot be downloaded.</p>
+                    <div class="faq-answer">
+                        <p>No, private or restricted videos cannot be downloaded.</p>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Is this service free to use?</h3>
                         <button class="faq-toggle"><i class="fas fa-chevron-down"></i></button>
                     </div>
-                    <p>Yes, our service is completely free.</p>
+                    <div class="faq-answer">
+                        <p>Yes, our service is completely free.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -204,14 +224,14 @@
             <div class="footer-content">
                 <div class="about">
                     <h3>About</h3>
-                    <p>VideooSaver is a free video and audio downloader for all social media platforms. Download your favorite videos and audios with ease.</p>
+                    <p>Videoo<span class="icon-unlimited">∞</span>Saver is a free video and audio downloader for all social media platforms. Download your favorite videos and audios with ease.</p>
                 </div>
                 <div class="quick-links">
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#why-choose-getvideo">Why Choose VideooSaver</a></li>
+                        <li><a href="#why-choose-getvideo">Why Choose Videoo<span class="icon-unlimited">∞</span>Saver</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#about">About</a></li>
                     </ul>
@@ -223,7 +243,7 @@
                 <a href="#"><i class="far fa-envelope"></i></a>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 VideooSaver. All rights reserved.</p>
+                <p>© 2025 Videoo<span class="icon-unlimited">∞</span>Saver. All rights reserved.</p>
             </div>
         </footer>
     </div>
