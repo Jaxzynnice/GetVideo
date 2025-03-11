@@ -13,63 +13,35 @@ body.dark-mode {
     color: #ffffff;
 }
 
-body.dark-mode .info-card, body.dark-mode .feature-card, body.dark-mode .status-card, body.dark-mode .faq-item {
-    background-color: #1e1e1e;
+/* Navbar */
+.navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar-brand img {
+    width: 140px;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.navbar-nav .nav-link {
+    color: #333 !important;
+    font-weight: 500;
 }
 
-header .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
 }
 
-header .nav-links a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header .settings {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-header .settings button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
-header .settings select {
-    padding: 0.5rem;
-    border-radius: 4px;
-}
-
-header .divider {
-    width: 1px;
-    height: 20px;
-    background-color: #ccc;
+/* Main Content */
+.main-content {
+    padding-top: 80px;
 }
 
 .hero {
     text-align: center;
     padding: 2rem;
     background-color: #f4f4f4;
+    border-radius: 8px;
 }
 
 .hero h1 {
@@ -105,23 +77,36 @@ header .divider {
     cursor: pointer;
 }
 
-.your-information, .how-it-works, .why-choose-getvideo, .server-status, .faq {
+/* Your Information */
+.your-information {
     padding: 2rem;
     text-align: center;
 }
 
-.your-information .info-cards, .server-status .status-cards {
+.your-information .info-cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.your-information .info-card, .server-status .status-card {
-    flex: 1 1 300px;
+.your-information .info-card {
+    flex: 1 1 200px;
     padding: 1rem;
-    background-color: #f4f4f4;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 8px;
+}
+
+.your-information .info-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 2rem;
+    text-align: center;
 }
 
 .how-it-works .steps {
@@ -139,6 +124,20 @@ header .divider {
 .how-it-works .step-icon {
     font-size: 2rem;
     margin-bottom: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Why Choose GetVideo */
+.why-choose-getvideo {
+    padding: 2rem;
+    text-align: center;
 }
 
 .why-choose-getvideo .feature-cards {
@@ -151,8 +150,46 @@ header .divider {
 .why-choose-getvideo .feature-card {
     flex: 1 1 300px;
     padding: 1rem;
-    background-color: #f4f4f4;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 8px;
+}
+
+.why-choose-getvideo .feature-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Server Status */
+.server-status {
+    padding: 2rem;
+    text-align: center;
+}
+
+.server-status .status-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.server-status .status-card {
+    flex: 1 1 200px;
+    padding: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.server-status .status-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* FAQ */
+.faq {
+    padding: 2rem;
+    text-align: center;
 }
 
 .faq .faq-list {
@@ -163,7 +200,8 @@ header .divider {
 
 .faq .faq-item {
     padding: 1rem;
-    background-color: #f4f4f4;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 8px;
 }
 
@@ -177,6 +215,7 @@ header .divider {
     background: none;
     border: none;
     cursor: pointer;
+    color: #fff;
 }
 
 .faq .faq-item p {
@@ -188,6 +227,7 @@ header .divider {
     display: block;
 }
 
+/* Footer */
 footer {
     background-color: #007bff;
     color: #fff;
@@ -234,6 +274,7 @@ footer .footer-bottom {
     padding-top: 1rem;
 }
 
+/* Scroll to Top Button */
 #toTopBtn {
     display: none;
     position: fixed;
@@ -256,11 +297,6 @@ footer .footer-bottom {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    header .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .download-box {
         flex-direction: column;
         align-items: center;
