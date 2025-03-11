@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poetsen One', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffffff;
@@ -17,15 +17,28 @@ body.dark-mode {
 .navbar {
     background-color: #ffffff !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
 }
 
 .navbar-brand img {
-    width: 140px;
+    width: 100px;
+}
+
+.navbar-brand .logo-text {
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    color: #007bff;
 }
 
 .navbar-nav .nav-link {
     color: #333 !important;
     font-weight: 500;
+    margin: 0 0.5rem;
 }
 
 .navbar-nav .nav-link:hover {
@@ -134,7 +147,7 @@ body.dark-mode {
     border-radius: 50%;
 }
 
-/* Why Choose GetVideo */
+/* Why Choose VideooSaver */
 .why-choose-getvideo {
     padding: 2rem;
     text-align: center;
