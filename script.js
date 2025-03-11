@@ -63,14 +63,6 @@ document.getElementById('pasteBtn').addEventListener('click', async () => {
     }
 });
 
-// Toggle Navbar
-const navbarToggle = document.querySelector('.navbar-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-navbarToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
 // Scroll to Top Button
 const toTopBtn = document.getElementById('toTopBtn');
 window.addEventListener('scroll', () => {
