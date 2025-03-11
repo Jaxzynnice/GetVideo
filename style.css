@@ -17,7 +17,7 @@ body.dark-mode {
 .navbar {
     background-color: #ffffff !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .navbar-brand {
@@ -26,12 +26,17 @@ body.dark-mode {
 }
 
 .navbar-brand img {
-    width: 100px;
+    width: 80px;
 }
 
 .navbar-brand .logo-text {
     font-size: 1.5rem;
     margin-left: 0.5rem;
+    color: #007bff;
+}
+
+.icon-unlimited {
+    font-size: 1.2rem;
     color: #007bff;
 }
 
@@ -45,6 +50,24 @@ body.dark-mode {
     color: #007bff !important;
 }
 
+.settings {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.settings button {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.settings select {
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
 /* Main Content */
 .main-content {
     padding-top: 80px;
@@ -53,7 +76,8 @@ body.dark-mode {
 .hero {
     text-align: center;
     padding: 2rem;
-    background-color: #f4f4f4;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 8px;
 }
 
@@ -83,11 +107,15 @@ body.dark-mode {
 
 .download-box button {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #fff;
+    color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.download-box button i {
+    color: #007bff;
 }
 
 /* Your Information */
@@ -104,7 +132,7 @@ body.dark-mode {
 }
 
 .your-information .info-card {
-    flex: 1 1 200px;
+    flex: 1 1 150px;
     padding: 1rem;
     background-color: #007bff;
     color: #fff;
@@ -124,8 +152,7 @@ body.dark-mode {
 
 .how-it-works .steps {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -145,6 +172,7 @@ body.dark-mode {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    margin: 0 auto;
 }
 
 /* Why Choose VideooSaver */
@@ -155,8 +183,7 @@ body.dark-mode {
 
 .why-choose-getvideo .feature-cards {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -181,13 +208,12 @@ body.dark-mode {
 
 .server-status .status-cards {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
 .server-status .status-card {
-    flex: 1 1 200px;
+    flex: 1 1 45%;
     padding: 1rem;
     background-color: #007bff;
     color: #fff;
@@ -231,12 +257,14 @@ body.dark-mode {
     color: #fff;
 }
 
-.faq .faq-item p {
-    display: none;
+.faq .faq-answer {
+    border-top: 1px solid #fff;
     margin-top: 1rem;
+    padding-top: 1rem;
+    display: none;
 }
 
-.faq .faq-item.active p {
+.faq .faq-item.active .faq-answer {
     display: block;
 }
 
@@ -295,17 +323,18 @@ footer .footer-bottom {
     right: 20px;
     z-index: 99;
     font-size: 1.5rem;
-    border: none;
+    border: 2px solid #007bff;
     outline: none;
-    background-color: #007bff;
-    color: white;
+    background-color: #fff;
+    color: #007bff;
     cursor: pointer;
     padding: 0.5rem 1rem;
     border-radius: 50%;
 }
 
 #toTopBtn:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
+    color: #fff;
 }
 
 /* Responsive Styles */
@@ -319,7 +348,7 @@ footer .footer-bottom {
         width: 100%;
     }
 
-    .your-information .info-cards, .server-status .status-cards, .why-choose-getvideo .feature-cards {
+    .your-information .info-cards, .server-status .status-cards {
         flex-direction: column;
     }
 }
