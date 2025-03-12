@@ -20,6 +20,10 @@ body.dark-mode {
     padding: 0.5rem 0;
 }
 
+.navbar.dark-mode {
+    background-color: #000 !important;
+}
+
 .navbar-brand {
     display: flex;
     align-items: center;
@@ -35,25 +39,14 @@ body.dark-mode {
     color: #007bff;
 }
 
-.icon-unlimited {
-    font-size: 1.2rem;
-    color: #007bff;
-}
-
-.navbar-nav .nav-link {
-    color: #333 !important;
-    font-weight: 500;
-    margin: 0 0.5rem;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #007bff !important;
-}
-
 .settings {
     display: flex;
     gap: 1rem;
     align-items: center;
+}
+
+.settings .divider {
+    color: #007bff;
 }
 
 .settings button {
@@ -76,8 +69,8 @@ body.dark-mode {
 .hero {
     text-align: center;
     padding: 2rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #ffffff;
+    color: #333;
     border-radius: 8px;
 }
 
@@ -89,6 +82,39 @@ body.dark-mode {
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.buttons button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.icons i {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+/* Form Section */
+.form {
+    padding: 2rem;
+    text-align: center;
 }
 
 .download-box {
@@ -107,12 +133,14 @@ body.dark-mode {
 
 .download-box button {
     padding: 0.5rem 1rem;
-    background-color: #fff;
-    color: #007bff;
+    background-color: #007bff;
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
+
+/* Other sections remain unchanged */
 
 .download-box button i {
     color: #007bff;
