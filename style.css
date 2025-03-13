@@ -39,20 +39,27 @@ body.dark-mode {
     color: #007bff;
 }
 
+.navbar-nav .nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+    color: #007bff !important;
+}
+
 .settings {
     display: flex;
     gap: 1rem;
     align-items: center;
-}
-
-.settings .divider {
-    color: #007bff;
+    margin-left: auto;
 }
 
 .settings button {
     background: none;
     border: none;
-    color: #007bff;
+    color: #000;
     cursor: pointer;
 }
 
@@ -69,8 +76,8 @@ body.dark-mode {
 .hero {
     text-align: center;
     padding: 2rem;
-    background-color: #ffffff;
-    color: #333;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 8px;
 }
 
@@ -92,8 +99,8 @@ body.dark-mode {
 
 .buttons button {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #fff;
+    color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -108,13 +115,15 @@ body.dark-mode {
 
 .icons i {
     font-size: 2rem;
-    color: #007bff;
+    color: #fff;
 }
 
 /* Form Section */
 .form {
     padding: 2rem;
     text-align: center;
+    background-color: #007bff;
+    color: #fff;
 }
 
 .download-box {
@@ -133,8 +142,8 @@ body.dark-mode {
 
 .download-box button {
     padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #fff;
+    color: #007bff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
