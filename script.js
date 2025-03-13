@@ -65,8 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Proceed with download
-            alert('Downloading...');
+            // Proceed with download using api.agatz.xyz
+            fetch(`https://api.agatz.xyz/api/tiktok?url=${url}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.url) {
+                        window.open(data.url, '_blank');
+                    } else {
+                        alert('Failed to download video');
+                    }
+                })
+                .catch(err => {
+                    alert('Failed to download video');
+                });
         });
     }
 
