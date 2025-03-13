@@ -60,8 +60,8 @@
             <h1>Welcome to VideooSaver</h1>
             <p>Download and convert videos from your favorite platforms for free.</p>
             <div class="buttons">
-                <button class="btn-get-started">Get Started</button>
-                <button class="btn-tutorial">Tutorial</button>
+                <button class="btn-get-started" onclick="location.href='#form'">Get Started</button>
+                <button class="btn-tutorial" onclick="location.href='#step-to-use'">Tutorial</button>
             </div>
             <div class="your-information">
                 <h2>Your Information</h2>
@@ -113,6 +113,37 @@
                     <div class="step-icon"><i class="fas fa-download"></i></div>
                     <h3>Download Video</h3>
                     <p>Your video is ready to watch offline</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-videosaver" class="why-videosaver">
+            <h2>Why VideooSaver?</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Fast Download</h3>
+                    <p>Download videos at maximum speed with our optimized servers</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure & Safe</h3>
+                    <p>100% safe downloads without any harmful viruses or ads</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-infinity"></i>
+                    <h3>Unlimited Downloads</h3>
+                    <p>No limits on the number of videos you can download</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Completely Free</h3>
+                    <p>Our service is completely free to use</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>10+ Supported Sites</h3>
+                    <p>Download videos from more than 10 supported platforms</p>
                 </div>
             </div>
         </section>
@@ -190,6 +221,20 @@
                     <div class="faq-answer">
                         <p>Yes, our service is completely free.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="result" class="result">
+            <h2>Download Result</h2>
+            <div class="result-content">
+                <video controls poster="" id="resultVideo">
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="result-info">
+                    <h3 id="resultTitle"></h3>
+                    <p id="resultDescription"></p>
                 </div>
             </div>
         </section>
