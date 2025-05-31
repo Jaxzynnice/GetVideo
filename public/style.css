@@ -1,0 +1,220 @@
+/* Use the CSS you provided as the base - it's already perfect for this project */
+/* I'll just add some additional styles specific to our video downloader */
+
+/* Video Card Styles */
+.video-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--hover-transition);
+  margin-bottom: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.video-card:hover {
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-5px);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.video-info {
+  padding: 20px;
+}
+
+.video-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--text-color);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.download-options {
+  margin-top: 20px;
+}
+
+.quality-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 10px;
+  transition: var(--transition);
+}
+
+.quality-option:hover {
+  background-color: var(--highlight-color);
+}
+
+.quality-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quality-label {
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.quality-size {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.download-btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  padding: 8px 15px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--hover-transition);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Feature Cards */
+.feature-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  text-align: center;
+  height: 100%;
+  transition: var(--hover-transition);
+  border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+}
+
+/* Responsive Grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+
+.col-12, .col-md-4 {
+  padding: 0 12px;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+}
+
+/* Loading Animation */
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+.loading-dots span {
+  animation: dotPulse 1.5s infinite;
+}
+
+.loading-dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Video Download Form */
+.video-download-form {
+  margin-top: 30px;
+}
+
+.video-download-form .input-group {
+  display: flex;
+  max-width: 600px;
+}
+
+.video-download-form input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+  background-color: var(--card-background);
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.video-download-form input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.video-download-form button {
+  border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+  padding: 0 25px;
+  font-size: 1rem;
+}
+
+/* Error Message */
+.error-message {
+  color: var(--error-color);
+  margin-top: 10px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+/* Success Message */
+.success-message {
+  color: var(--success-color);
+  margin-top: 10px;
+  font-size: 0.9rem;
+  display: none;
+}
