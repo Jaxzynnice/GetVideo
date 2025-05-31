@@ -1,40 +1,45 @@
 const express = require('express');
-const os = require('os');
+const path = require('path');
+const downloadRouter = require('./routes/download');
+
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+// Set view engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-app.get('/api/status', (req, res) => {
-    const uptime = os.uptime();
-    const totalMem = os.totalmem();
-    const freeMem = os.freemem();
-    const usedMem = totalMem - freeMem;
-    const diskUsage = require('diskusage').checkSync('/');
+// Middleware
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-    res.json({
-        uptime: formatUptime(uptime),
-        totalRequests: '12,146',
-        memoryUsage: `${formatSize(usedMem)} / ${formatSize(totalMem)}`,
-        diskUsage: `${formatSize(diskUsage.used)} / ${formatSize(diskUsage.total)}`
-    });
+// Routes
+app.use('/download', downloadRouter);
+
+app.get('/', (req, res) => {
+  res.render('index', { 
+    title: 'VideooSaver - Download Videos Online',
+    description: 'Download videos from various platforms with VideooSaver - Fast, free and easy to use!'
+  });
 });
 
-function formatUptime(seconds) {
-    const days = Math.floor(seconds / (3600 * 24));
-    const hours = Math.floor((seconds % (3600 * 24)) / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${days}d ${hours}h ${minutes}m ${secs}s`;
-}
+// Error handling
+app.use((req, res, next) => {
+  res.status(404).render('error', { 
+    title: '404 Not Found',
+    message: 'The page you are looking for does not exist.'
+  });
+});
 
-function formatSize(bytes) {
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-    if (bytes === 0) return '0 Bytes';
-    const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)), 10);
-    return (Math.round(bytes / Math.pow(1024, i) * 100) / 100) + ' ' + sizes[i];
-}
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('error', { 
+    title: '500 Server Error',
+    message: 'Something went wrong on our end. Please try again later.'
+  });
+});
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
