@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Side Navigation -->
+  <nav class="side-nav">
+    <div class="side-nav-logo">
+      <i class="fas fa-cloud-download-alt"></i>
+      <span id="sideNavName">VideooSaver</span>
+    </div>
+    
+    <div class="side-nav-links">
+      <a href="/" class="side-nav-link active">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+      <a href="#" class="side-nav-link">
+        <i class="fas fa-info-circle"></i>
+        <span>About</span>
+      </a>
+      <a href="#" class="side-nav-link">
+        <i class="fas fa-question-circle"></i>
+        <span>Help</span>
+      </a>
+    </div>
+    
+    <div class="side-nav-footer">
+      <button class="nav-collapse-btn" id="navCollapseBtn">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-wrapper" id="mainWrapper">
+    <!-- Header -->
+    <header class="main-header">
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="search-container">
+        <div class="input-group">
+          <input type="text" id="videoUrlInput" placeholder="Paste video URL here..." autocomplete="off">
+          <button class="clear-search" id="clearSearch">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <button class="notification-bell" id="themeToggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="hero-heading">
+          <h1 id="name">VideooSaver</h1>
+          <span class="badge-pill">v1.0.0</span>
+        </div>
+        
+        <p class="hero-description">
+          Download videos from YouTube and other platforms in high quality. 
+          Fast, free and easy to use!
+        </p>
+        
+        <div class="video-download-form">
+          <div class="input-group">
+            <input type="text" id="videoUrl" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off">
+            <button class="btn btn-primary" id="downloadBtn">
+              <i class="fas fa-download"></i> Download
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="banner-container">
+          <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Video Downloader" class="banner">
+        </div>
+        
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="api-section" id="resultsSection" style="display: none;">
+      <div class="section-header">
+        <h2 class="section-title">Download Options</h2>
+        <p class="section-description">Choose your preferred quality and format</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <div class="video-card" id="videoResult">
+            <!-- Results will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="api-section">
+      <div class="section-header">
+        <h2 class="section-title">Why Choose VideooSaver?</h2>
+        <p class="section-description">The best video downloader with amazing features</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Fast Downloads</h3>
+            <p>Download videos at high speed with our optimized servers.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fas fa-lock"></i>
+            <h3>Secure</h3>
+            <p>No registration required. We don't store your data.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="feature-card">
+            <i class="fas fa-desktop"></i>
+            <h3>Multi-Platform</h3>
+            <p>Works on all devices - desktop, tablet and mobile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="copyright">
+          &copy; 2023 VideooSaver. All rights reserved.
+        </div>
+        
+        <div class="footer-middle">
+          <div class="theme-switcher">
+            <span>Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" id="themeSwitch">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="footer-links">
+          <a href="#" class="footer-link">Terms</a>
+          <a href="#" class="footer-link">Privacy</a>
+          <a href="#" class="footer-link">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div class="spinner-wrapper">
+      <svg class="spinner-logo" width="60" height="60" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
+            <stop stop-color="var(--primary-color)" stop-opacity="0" offset="0%"/>
+            <stop stop-color="var(--primary-color)" stop-opacity=".631" offset="63.146%"/>
+            <stop stop-color="var(--primary-color)" offset="100%"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+          <g transform="translate(1 1)">
+            <path d="M36 18c0-9.94-8.06-18-18-18" id="spinner-path" stroke="url(#a)" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite"/>
+            </path>
+            <circle cx="36" cy="18" r="1" fill="var(--primary-color)">
+              <animateTransform attributeName="transform" type="rotate" from="0 18 18" to="360 18 18" dur="0.9s" repeatCount="indefinite"/>
+            </circle>
+          </g>
+        </g>
+      </svg>
+      <p>Loading<span class="loading-dots">...</span></p>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
