@@ -1,12 +1,19 @@
 {
-  "name": "getvideo",
+  "name": "VideooSaver",
   "version": "1.0.0",
-  "description": "Free Video & Audio Downloader",
+  "description": "A video downloader website",
   "main": "app.js",
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "axios": "^1.6.7",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
